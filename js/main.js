@@ -120,6 +120,27 @@ const observerOptions = {
     threshold: 0.15 // Trigger when 15% of element is visible
 };
 
+// Generic scroll reveal observer for all reveal classes
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            // Optionally unobserve after revealing (one-time animation)
+            // revealObserver.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+// Apply scroll reveal to all elements with reveal classes
+const allRevealElements = document.querySelectorAll(
+    '.reveal, .reveal-fade, .reveal-left, .reveal-right, .reveal-scale'
+);
+
+allRevealElements.forEach(el => {
+    revealObserver.observe(el);
+});
+
+// Legacy support for specific elements (if they exist)
 const scrollObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -129,9 +150,8 @@ const scrollObserver = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Apply scroll reveal to service items, voice items, price cards
-const revealElements = document.querySelectorAll('.service-item, .voice-item, .price-card');
-revealElements.forEach(el => {
+const legacyRevealElements = document.querySelectorAll('.service-item, .voice-item, .price-card');
+legacyRevealElements.forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(50px)';
     el.style.transition = 'opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
