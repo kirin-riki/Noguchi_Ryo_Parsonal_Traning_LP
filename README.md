@@ -1,5 +1,7 @@
 # Noguchi Ryo Personal Training - ランディングページ
 
+https://kirin-riki.github.io/Noguchi_Ryo_Parsonal_Traning_LP/
+
 パーソナルトレーニングサービスのランディングページ
 
 ## 📁 ファイル構成
