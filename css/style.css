@@ -840,12 +840,12 @@ section {
     }
 
     .container {
-        padding: 0 20px;
+        padding: 0 24px;
     }
 
     /* Header */
     .header-container {
-        padding: 15px 20px;
+        padding: 15px 24px;
     }
 
     .logo h1 {
@@ -937,7 +937,28 @@ section {
 
     .philosophy-title {
         font-size: 17px;
-        letter-spacing: 2px;
+        letter-spacing: 1px;
+        margin-bottom: 30px;
+    }
+
+    /* Concept */
+    .concept-text {
+        font-size: 16px;
+        line-height: 2.2;
+    }
+
+    .concept-main {
+        margin-bottom: var(--spacing-xl);
+    }
+
+    .concept-philosophy .philosophy-text {
+        font-size: 16px;
+        line-height: 2.2;
+        margin-bottom: 25px;
+    }
+
+    .concept-philosophy .philosophy-text br {
+        display: none;
     }
 
     /* Philosophy Sections */
@@ -948,23 +969,46 @@ section {
     }
 
     .philosophy-heading {
-        font-size: clamp(20px, 2.2vw, 26px);
-        letter-spacing: 3px;
+        font-size: clamp(22px, 2.5vw, 28px);
+        letter-spacing: 1.5px;
+        margin-bottom: 25px;
     }
 
     .philosophy-subtitle {
-        font-size: 11px;
-        letter-spacing: 2px;
+        font-size: 13px;
+        letter-spacing: 1.5px;
+        margin-bottom: var(--spacing-lg);
     }
 
     .philosophy-text {
-        font-size: 14px;
+        font-size: 16px;
         line-height: 2.2;
+        letter-spacing: 0.5px;
+        margin-bottom: 30px;
+    }
+
+    .philosophy-text br {
+        display: none;
     }
 
     .philosophy-closing {
-        font-size: 14px;
+        font-size: 16px;
         line-height: 2.2;
+        padding-top: 25px;
+    }
+
+    .philosophy-closing br {
+        display: none;
+    }
+
+    /* Hide br tags in concept section on mobile */
+    .concept-text br {
+        display: none;
+    }
+
+    .concept-heading {
+        font-size: 22px;
+        margin-bottom: 25px;
     }
 
     /* Profile */
@@ -990,6 +1034,35 @@ section {
     .profile-highlight {
         font-size: 16px;
         padding: 30px 25px;
+    }
+
+    .profile-section p {
+        font-size: 16px;
+        line-height: 2.2;
+        margin-bottom: 20px;
+    }
+
+    .profile-section p br {
+        display: none;
+    }
+
+    .profile-closing {
+        font-size: 16px;
+        line-height: 2.2;
+        padding-top: 20px;
+    }
+
+    .profile-closing br {
+        display: none;
+    }
+
+    .profile-section {
+        margin-bottom: 45px;
+    }
+
+    .profile-section h4 {
+        font-size: 14px;
+        margin-bottom: 20px;
     }
 
     /* Footer */
@@ -1050,6 +1123,77 @@ section {
         width: 42px;
         height: 42px;
         font-size: 15px;
+    }
+
+    /* Further optimize text for very small screens */
+    .philosophy-heading {
+        font-size: clamp(24px, 3vw, 30px);
+        letter-spacing: 1px;
+        margin-bottom: 20px;
+    }
+
+    .philosophy-subtitle {
+        font-size: 14px;
+    }
+
+    .philosophy-text {
+        font-size: 17px;
+        line-height: 2.1;
+        letter-spacing: 0.5px;
+        margin-bottom: 32px;
+    }
+
+    .philosophy-closing {
+        font-size: 17px;
+        line-height: 2.1;
+    }
+
+    .concept-heading {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .concept-text {
+        font-size: 17px;
+        line-height: 2.1;
+    }
+
+    .philosophy-title {
+        font-size: 18px;
+        margin-bottom: 28px;
+    }
+
+    .concept-philosophy .philosophy-text {
+        font-size: 17px;
+        line-height: 2.1;
+        margin-bottom: 28px;
+    }
+
+    .concept-main {
+        margin-bottom: 40px;
+    }
+
+    .profile-section p {
+        font-size: 17px;
+        line-height: 2.1;
+        margin-bottom: 22px;
+    }
+
+    .profile-closing {
+        font-size: 17px;
+        line-height: 2.1;
+    }
+
+    .philosophy-text-wrapper {
+        padding: var(--spacing-md) 20px;
+    }
+
+    .concept-philosophy {
+        padding: var(--spacing-md) 20px;
+    }
+
+    .profile-info {
+        padding: var(--spacing-md) 20px;
     }
 }
 
