@@ -936,8 +936,14 @@ section {
     }
 
     .philosophy-title {
-        font-size: 17px;
-        letter-spacing: 2px;
+        font-size: 16px;
+        letter-spacing: 1px;
+    }
+
+    /* Concept */
+    .concept-text {
+        font-size: 15px;
+        line-height: 2;
     }
 
     /* Philosophy Sections */
@@ -949,22 +955,36 @@ section {
 
     .philosophy-heading {
         font-size: clamp(20px, 2.2vw, 26px);
-        letter-spacing: 3px;
-    }
-
-    .philosophy-subtitle {
-        font-size: 11px;
         letter-spacing: 2px;
     }
 
+    .philosophy-subtitle {
+        font-size: 12px;
+        letter-spacing: 1.5px;
+    }
+
     .philosophy-text {
-        font-size: 14px;
-        line-height: 2.2;
+        font-size: 15px;
+        line-height: 2;
+        letter-spacing: 0.3px;
+    }
+
+    .philosophy-text br {
+        display: none;
     }
 
     .philosophy-closing {
-        font-size: 14px;
-        line-height: 2.2;
+        font-size: 15px;
+        line-height: 2;
+    }
+
+    .philosophy-closing br {
+        display: none;
+    }
+
+    /* Hide br tags in concept section on mobile */
+    .concept-text br {
+        display: none;
     }
 
     /* Profile */
@@ -990,6 +1010,19 @@ section {
     .profile-highlight {
         font-size: 16px;
         padding: 30px 25px;
+    }
+
+    .profile-section p {
+        font-size: 15px;
+        line-height: 2;
+    }
+
+    .profile-section p br {
+        display: none;
+    }
+
+    .profile-closing br {
+        display: none;
     }
 
     /* Footer */
@@ -1050,6 +1083,20 @@ section {
         width: 42px;
         height: 42px;
         font-size: 15px;
+    }
+
+    /* Further optimize text for very small screens */
+    .philosophy-text {
+        font-size: 16px;
+        line-height: 1.9;
+    }
+
+    .philosophy-closing {
+        font-size: 16px;
+    }
+
+    .profile-section p {
+        font-size: 16px;
     }
 }
 
