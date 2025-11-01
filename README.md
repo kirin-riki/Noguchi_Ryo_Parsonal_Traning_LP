@@ -13,10 +13,7 @@
 │   └── main.js            # JavaScript
 ├── image/                 # 画像ファイル
 │   ├── Profile_img.jpeg   # プロフィール写真
-│   ├── price_1.jpeg       # 60分プラン料金表
-│   ├── price_2.jpeg       # 90分プラン料金表
 │   └── training_*.jpeg    # トレーニング風景（8枚）
-├── requirements.md        # 要件定義書
 └── README.md             # このファイル
 ```
 
@@ -53,102 +50,8 @@ npx http-server -p 8000
 - ✅ 各セクションの実装
   - ファーストビュー
   - コンセプト
-  - サービス紹介
   - トレーナープロフィール
-  - お客様の声（4件）
-  - 料金プラン（60分・90分）
-  - お問い合わせ
   - フッター
-
-## ⚠️ 今後の対応が必要な項目
-
-### 1. Googleフォームの埋め込み
-
-**ファイル:** `index.html`（335行目付近）
-
-```html
-<!-- TODO: GoogleフォームのURLを設定してください -->
-<div class="contact-form-area">
-    <p class="contact-placeholder">こちらにGoogleフォームを埋め込んでください</p>
-    <!-- <iframe src="GoogleフォームのURL" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe> -->
-</div>
-```
-
-**対応方法:**
-1. Googleフォームを作成
-2. フォームの「送信」→「<>」（埋め込みコード）を取得
-3. 上記の`<iframe>`タグのコメントを外し、URLを設定
-4. `<p class="contact-placeholder">...</p>` を削除
-
-### 2. SNSリンクの追加
-
-**ファイル:** `index.html`（356-363行目付近）
-
-```html
-<!-- TODO: InstagramとアパレルサイトのURLを後日追加 -->
-<a href="#" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
-    <i class="fab fa-instagram"></i>
-</a>
-<a href="#" class="social-link" aria-label="Website" target="_blank" rel="noopener noreferrer">
-    <i class="fas fa-tshirt"></i>
-</a>
-```
-
-**対応方法:**
-1. `href="#"` の部分を実際のURLに変更
-   - Instagram: `href="https://instagram.com/あなたのアカウント"`
-   - アパレルサイト: `href="https://あなたのサイトURL"`
-
-### 3. ファビコンの設定（任意）
-
-**ファイル:** `index.html`（head内に追加）
-
-```html
-<link rel="icon" type="image/png" href="favicon.png">
-```
-
-## 🎨 カスタマイズ方法
-
-### カラースキームを変更する
-
-**ファイル:** `css/style.css`
-
-主要な色を一括で変更できます：
-
-```css
-/* メインカラー（青） */
-#3498db → お好みの色コードに変更
-
-/* テキストカラー（ダークグレー） */
-#2c3e50 → お好みの色コードに変更
-
-/* 背景カラー（ライトグレー） */
-#f8f9fa → お好みの色コードに変更
-```
-
-### フォントを変更する
-
-**ファイル:** `index.html`（11-13行目）
-
-```html
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-```
-
-Google Fontsで別のフォントを選んで、このリンクを変更してください。
-
-### セクションの順序を変更する
-
-`index.html` 内の `<section>` タグをコピー＆ペーストで自由に並び替えられます。
-
-### トレーニング風景の画像を変更する
-
-**ファイル:** `index.html`（51行目）
-
-```html
-<img src="image/training_1.jpeg" alt="トレーニング風景" class="fv-image">
-```
-
-`training_1.jpeg` を他の画像ファイル名に変更できます。
 
 ## 🌐 公開方法
 
@@ -171,11 +74,6 @@ Google Fontsで別のフォントを選んで、このリンクを変更して�
 2. GitHubアカウントでサインアップ
 3. リポジトリをインポート
 4. 自動的にデプロイ
-
-### 独自ドメインの設定
-
-上記のサービスはすべて独自ドメインの設定が可能です。
-各サービスのドキュメントを参照してください。
 
 ## 📱 動作確認
 
