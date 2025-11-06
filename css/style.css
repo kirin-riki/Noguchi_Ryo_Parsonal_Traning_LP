@@ -51,6 +51,7 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+    overflow-x: hidden;
 }
 
 body {
@@ -63,6 +64,7 @@ body {
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    max-width: 100vw;
 }
 
 img {
@@ -692,6 +694,14 @@ section {
 .profile-image {
     position: sticky;
     top: 120px;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.profile-image.profile-revealed {
+    opacity: 1;
+    transform: scale(1);
 }
 
 .profile-image img {
@@ -1025,6 +1035,12 @@ section {
         letter-spacing: 6px;
     }
 
+    .section-title h2::before,
+    .section-title h2::after {
+        left: -30px;
+        right: -30px;
+    }
+
     .section-title::after {
         margin: 25px auto 0;
     }
@@ -1034,16 +1050,29 @@ section {
         gap: var(--spacing-lg);
     }
 
+    .profile-image {
+        top: 100px;
+    }
+
     .philosophy-text-wrapper {
         padding: var(--spacing-lg) var(--spacing-md);
     }
 
     .philosophy-text {
-        font-size: 14px;
+        font-size: 15px;
+        line-height: 2.4;
     }
 
     .philosophy-closing {
-        font-size: 14px;
+        font-size: 15px;
+        line-height: 2.4;
+    }
+
+    .concept-heading::before,
+    .concept-heading::after {
+        left: -25px;
+        right: -25px;
+        font-size: 28px;
     }
 }
 
@@ -1056,17 +1085,21 @@ section {
     }
 
     .container {
-        padding: 0 24px;
+        padding: 0 20px;
     }
 
     /* Header */
     .header-container {
-        padding: 15px 24px;
+        padding: 15px 20px;
     }
 
     .logo h1 {
         font-size: 15px;
         letter-spacing: 1.5px;
+    }
+
+    .logo h1::after {
+        display: none;
     }
 
     .nav {
@@ -1107,31 +1140,47 @@ section {
     }
 
     .fv-content {
-        padding: 0 24px;
+        padding: 0 20px;
     }
 
     .fv-badge {
-        font-size: 14px;
-        letter-spacing: 3.5px;
-        padding: 15px 34px;
+        font-size: 13px;
+        letter-spacing: 2.5px;
+        padding: 14px 28px;
         margin-bottom: 35px;
+    }
+
+    .fv-badge::before,
+    .fv-badge::after {
+        display: none;
     }
 
     .fv-subtitle {
         font-size: 11px;
-        letter-spacing: 3px;
+        letter-spacing: 2.5px;
         margin-bottom: 28px;
+    }
+
+    .fv-subtitle::before,
+    .fv-subtitle::after {
+        margin: 0 10px;
     }
 
     .fv-title {
         font-size: clamp(22px, 5vw, 32px);
         margin-bottom: 25px;
+        letter-spacing: 2px;
     }
 
     .fv-description {
         font-size: 13px;
-        letter-spacing: 3px;
+        letter-spacing: 2.5px;
         margin-bottom: 40px;
+    }
+
+    .fv-description::before,
+    .fv-description::after {
+        margin: 0 10px;
     }
 
     .btn-primary {
@@ -1154,9 +1203,18 @@ section {
         letter-spacing: 5px;
     }
 
+    .section-title h2::before,
+    .section-title h2::after {
+        display: none;
+    }
+
     .section-title::after {
         width: 50px;
         margin: 20px auto 0;
+    }
+
+    .section-title::before {
+        display: none;
     }
 
     /* Concept */
@@ -1168,6 +1226,11 @@ section {
         font-size: 17px;
         letter-spacing: 1px;
         margin-bottom: 30px;
+        padding: 0 20px;
+    }
+
+    .philosophy-title::before {
+        display: none;
     }
 
     /* Concept */
@@ -1178,6 +1241,18 @@ section {
 
     .concept-main {
         margin-bottom: var(--spacing-xl);
+        padding: 0 10px;
+    }
+
+    .concept-heading {
+        font-size: 22px;
+        letter-spacing: 3px;
+        margin-bottom: 25px;
+    }
+
+    .concept-heading::before,
+    .concept-heading::after {
+        display: none;
     }
 
     .concept-philosophy .philosophy-text {
@@ -1194,19 +1269,33 @@ section {
     .philosophy-text-wrapper {
         padding: var(--spacing-lg) var(--spacing-md);
         border-left: none;
-        border-top: 1px solid var(--color-border);
+        border-top: 3px double var(--color-border);
     }
 
     .philosophy-heading {
-        font-size: clamp(22px, 2.5vw, 28px);
+        font-size: clamp(20px, 2.5vw, 26px);
         letter-spacing: 1.5px;
         margin-bottom: 25px;
     }
 
+    .philosophy-heading::before {
+        display: none;
+    }
+
+    .philosophy-heading::after {
+        width: 60px;
+        margin: 30px auto 0;
+    }
+
     .philosophy-subtitle {
-        font-size: 13px;
+        font-size: 12px;
         letter-spacing: 1.5px;
         margin-bottom: var(--spacing-lg);
+    }
+
+    .philosophy-subtitle::before,
+    .philosophy-subtitle::after {
+        margin: 0 10px;
     }
 
     .philosophy-text {
@@ -1235,11 +1324,6 @@ section {
         display: none;
     }
 
-    .concept-heading {
-        font-size: 22px;
-        margin-bottom: 25px;
-    }
-
     /* Profile */
     .profile-content {
         grid-template-columns: 1fr;
@@ -1250,6 +1334,13 @@ section {
         position: static;
         max-width: 350px;
         margin: 0 auto;
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    .profile-image.profile-revealed {
+        opacity: 1;
+        transform: scale(1);
     }
 
     .profile-info {
@@ -1307,9 +1398,18 @@ section {
         margin-bottom: 35px;
     }
 
+    .footer-content::after {
+        display: none;
+    }
+
     .footer-brand h3 {
         font-size: 15px;
         letter-spacing: 1.5px;
+    }
+
+    .footer-tagline::before,
+    .footer-tagline::after {
+        margin: 0 8px;
     }
 
     .social-link {
@@ -1317,103 +1417,135 @@ section {
         height: 44px;
         font-size: 16px;
     }
+
+    .social-links {
+        justify-content: center;
+    }
 }
 
 @media (max-width: 480px) {
+    .container {
+        padding: 0 16px;
+    }
+
+    .header-container {
+        padding: 12px 16px;
+    }
+
     .logo h1 {
-        font-size: 14px;
-        letter-spacing: 1px;
+        font-size: 12px;
+        letter-spacing: 0.8px;
     }
 
     .logo h1 span {
-        font-size: 10px;
-        letter-spacing: 2px;
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    .nav {
+        width: 85%;
+        padding: 80px 24px;
+    }
+
+    .fv {
+        min-height: 550px;
     }
 
     .fv-content {
-        padding: 0 18px;
+        padding: 0 16px;
     }
 
     .fv-badge {
-        font-size: 13px;
-        letter-spacing: 3px;
-        padding: 14px 30px;
-        margin-bottom: 30px;
+        font-size: 10px;
+        letter-spacing: 1.5px;
+        padding: 12px 20px;
+        margin-bottom: 28px;
     }
 
     .fv-title {
-        line-height: 1.75;
-        letter-spacing: 1.5px;
+        line-height: 1.7;
+        letter-spacing: 1px;
     }
 
     .fv-subtitle {
-        font-size: 11px;
-        letter-spacing: 2.5px;
+        font-size: 9px;
+        letter-spacing: 1.5px;
     }
 
     .fv-description {
-        font-size: 13px;
-        letter-spacing: 3px;
+        font-size: 11px;
+        letter-spacing: 1.5px;
     }
 
     .btn-primary {
         width: 100%;
-        max-width: 300px;
-        padding: 13px 35px;
+        max-width: 280px;
+        padding: 12px 32px;
+        font-size: 11px;
+        letter-spacing: 1.5px;
     }
 
     .section-title h2 {
-        letter-spacing: 5px;
+        letter-spacing: 3px;
+    }
+
+    .section-subtitle {
+        font-size: 11px;
+        letter-spacing: 2.5px;
     }
 
     .social-link {
-        width: 42px;
-        height: 42px;
-        font-size: 15px;
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
     }
 
     /* Further optimize text for very small screens */
     .philosophy-heading {
-        font-size: clamp(24px, 3vw, 30px);
+        font-size: clamp(18px, 4.5vw, 24px);
         letter-spacing: 1px;
         margin-bottom: 20px;
     }
 
     .philosophy-subtitle {
-        font-size: 14px;
+        font-size: 11px;
+        letter-spacing: 1px;
     }
 
     .philosophy-text {
-        font-size: 17px;
+        font-size: 15px;
         line-height: 2.1;
-        letter-spacing: 0.5px;
-        margin-bottom: 32px;
+        letter-spacing: 0.3px;
+        margin-bottom: 28px;
     }
 
     .philosophy-closing {
-        font-size: 17px;
+        font-size: 15px;
         line-height: 2.1;
     }
 
     .concept-heading {
-        font-size: 24px;
+        font-size: 19px;
+        letter-spacing: 2px;
         margin-bottom: 20px;
     }
 
     .concept-text {
-        font-size: 17px;
+        font-size: 15px;
         line-height: 2.1;
     }
 
     .philosophy-title {
-        font-size: 18px;
+        font-size: 15px;
+        letter-spacing: 0.5px;
         margin-bottom: 28px;
+        padding: 0 10px;
     }
 
     .concept-philosophy .philosophy-text {
-        font-size: 17px;
+        font-size: 15px;
         line-height: 2.1;
-        margin-bottom: 28px;
+        margin-bottom: 24px;
     }
 
     .concept-main {
@@ -1421,26 +1553,46 @@ section {
     }
 
     .profile-section p {
-        font-size: 17px;
+        font-size: 15px;
         line-height: 2.1;
-        margin-bottom: 22px;
+        margin-bottom: 20px;
     }
 
     .profile-closing {
-        font-size: 17px;
+        font-size: 15px;
         line-height: 2.1;
     }
 
+    .profile-highlight {
+        font-size: 15px;
+        padding: 28px 20px;
+    }
+
     .philosophy-text-wrapper {
-        padding: var(--spacing-md) 20px;
+        padding: var(--spacing-md) 16px;
     }
 
     .concept-philosophy {
-        padding: var(--spacing-md) 20px;
+        padding: var(--spacing-md) 16px;
     }
 
     .profile-info {
-        padding: var(--spacing-md) 20px;
+        padding: var(--spacing-md) 16px;
+    }
+
+    .profile-name {
+        font-size: 24px;
+        letter-spacing: 2px;
+    }
+
+    .profile-name-en {
+        font-size: 16px;
+        letter-spacing: 2px;
+    }
+
+    .footer-tagline::before,
+    .footer-tagline::after {
+        margin: 0 8px;
     }
 }
 

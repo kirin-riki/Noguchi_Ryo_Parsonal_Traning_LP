@@ -254,21 +254,22 @@ serviceItems.forEach((item, index) => {
 });
 
 // ========================================
-// Profile Image Grayscale Effect
+// Profile Image Animation Effect
 // ========================================
-const profileImage = document.querySelector('.profile-image img');
-if (profileImage) {
+const profileImageContainer = document.querySelector('.profile-image');
+if (profileImageContainer) {
     const profileObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                setTimeout(() => {
-                    profileImage.style.filter = 'grayscale(0%)';
-                }, 500);
+                // Add a class for animation instead of directly setting style
+                entry.target.classList.add('profile-revealed');
+                // Unobserve after animation to allow hover effect to work
+                profileObserver.unobserve(entry.target);
             }
         });
     }, { threshold: 0.3 });
 
-    profileObserver.observe(profileImage);
+    profileObserver.observe(profileImageContainer);
 }
 
 // ========================================
