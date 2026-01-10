@@ -349,6 +349,16 @@ ul {
     opacity: 0.5;
 }
 
+.fv-tagline {
+    font-size: 18px;
+    font-weight: var(--font-weight-medium);
+    margin-bottom: 50px;
+    letter-spacing: 2px;
+    opacity: 0;
+    animation: fadeInUp 1.2s ease 1.4s forwards;
+    position: relative;
+}
+
 .btn-primary {
     display: inline-block;
     background-color: transparent;
@@ -500,6 +510,11 @@ section {
     color: var(--color-text);
     font-weight: var(--font-weight-light);
     letter-spacing: 0.5px;
+    margin-bottom: 25px;
+}
+
+.concept-text:last-child {
+    margin-bottom: 0;
 }
 
 .concept-philosophy {
@@ -548,11 +563,6 @@ section {
     margin-bottom: 32px;
     font-weight: var(--font-weight-light);
     letter-spacing: 0.5px;
-    text-indent: 1em;
-}
-
-.philosophy-text:first-child {
-    text-indent: 0;
 }
 
 .philosophy-text:last-child {
@@ -571,11 +581,27 @@ section {
     background-color: var(--color-bg);
 }
 
-.philosophy-section.nutrition {
+.philosophy-section.training {
     background-color: var(--color-bg-dark);
 }
 
 .philosophy-section.face-to-face {
+    background-color: var(--color-bg);
+}
+
+.philosophy-section.nutrition {
+    background-color: var(--color-bg-dark);
+}
+
+.philosophy-section.system {
+    background-color: var(--color-bg);
+}
+
+.philosophy-section.message {
+    background-color: var(--color-bg-dark);
+}
+
+.philosophy-section.contact {
     background-color: var(--color-bg);
 }
 
@@ -641,26 +667,22 @@ section {
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.02);
 }
 
+.philosophy-section.training .philosophy-text-wrapper,
 .philosophy-section.nutrition .philosophy-text-wrapper {
     background-color: var(--color-bg);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.04);
 }
 
-.philosophy-text {
+.philosophy-text-wrapper .philosophy-text {
     font-size: 16px;
     line-height: 2.6;
     color: var(--color-text);
     margin-bottom: 40px;
     font-weight: var(--font-weight-light);
     letter-spacing: 0.5px;
-    text-indent: 1em;
 }
 
-.philosophy-text:first-of-type {
-    text-indent: 0;
-}
-
-.philosophy-text:last-of-type {
+.philosophy-text-wrapper .philosophy-text:last-of-type {
     margin-bottom: 40px;
 }
 
@@ -723,15 +745,13 @@ section {
 }
 
 .profile-name {
-    font-size: 36px;
+    font-size: 28px;
     font-weight: var(--font-weight-medium);
     color: var(--color-primary);
     margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    letter-spacing: 4px;
+    letter-spacing: 2px;
     position: relative;
+    line-height: 1.6;
 }
 
 .profile-name::after {
@@ -811,6 +831,20 @@ section {
     font-size: 13px;
     font-weight: var(--font-weight-medium);
     letter-spacing: 1px;
+}
+
+/* プロフィール情報リスト（経歴用） */
+.profile-section:first-child .profile-certifications li {
+    background-color: transparent;
+    color: var(--color-text);
+    padding: 8px 0;
+    font-size: 15px;
+    font-weight: var(--font-weight-light);
+    letter-spacing: 0.5px;
+    line-height: 2.2;
+    border-left: 2px solid var(--color-primary);
+    padding-left: 16px;
+    width: 100%;
 }
 
 .profile-closing {
@@ -1183,6 +1217,12 @@ section {
         margin: 0 10px;
     }
 
+    .fv-tagline {
+        font-size: 15px;
+        letter-spacing: 1.5px;
+        margin-bottom: 35px;
+    }
+
     .btn-primary {
         padding: 14px 40px;
         font-size: 12px;
@@ -1348,7 +1388,14 @@ section {
     }
 
     .profile-name {
-        font-size: 26px;
+        font-size: 22px;
+        letter-spacing: 1.5px;
+    }
+
+    .profile-section:first-child .profile-certifications li {
+        font-size: 15px;
+        line-height: 2.1;
+        padding: 6px 0 6px 12px;
     }
 
     .profile-highlight {
@@ -1477,6 +1524,12 @@ section {
         letter-spacing: 1.5px;
     }
 
+    .fv-tagline {
+        font-size: 13px;
+        letter-spacing: 1px;
+        margin-bottom: 30px;
+    }
+
     .btn-primary {
         width: 100%;
         max-width: 280px;
@@ -1581,8 +1634,14 @@ section {
     }
 
     .profile-name {
-        font-size: 24px;
-        letter-spacing: 2px;
+        font-size: 20px;
+        letter-spacing: 1px;
+    }
+
+    .profile-section:first-child .profile-certifications li {
+        font-size: 14px;
+        line-height: 2.0;
+        padding: 5px 0 5px 10px;
     }
 
     .profile-name-en {
