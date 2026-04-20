@@ -351,7 +351,7 @@ ul {
 
 .fv-tagline {
     font-size: 16px;
-    font-weight: var(--font-weight-medium);
+    font-weight: var(--font-weight-light);
     margin-bottom: 50px;
     letter-spacing: 2px;
     opacity: 0;
